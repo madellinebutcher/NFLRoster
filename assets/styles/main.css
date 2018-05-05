@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    background-image: url(../footballbg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.search button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: goldenrod;
+    color: white;
+    font-size: 17px;
+    border: 1px solid gold;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.search button:hover {
+    background:gold;
+}
+
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.playerImage{
+    width:200vw;
+    height:200vh;
+
+}
+
+input[type=text] {
+    border-radius: 4px;
+    margin:auto;
+    max-width:300px;
+    
+}
+.btn-search{
+    border-radius: 4px;
+
+}

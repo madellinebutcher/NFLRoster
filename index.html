@@ -8,29 +8,55 @@
     <title>NFL Fantasy FB</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/main.css">
+
 </head>
 
 <body>
+    <section class="container-fluid">
+
+            <form class="search" onsubmit="app.controllers.footballController.search(event)">
+                    <input type="text" id="search-button" placeholder="Search" name="query">
+                    <button class="btn-search" type="submit">
+                            <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                
+    </section>
 
 
     <section class="container-fluid">
         <div class="row">
-            <div class="col" id="players">
-                <div class="player-card">
-                    <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
-                    <h3>Player's Name</h3>
-                    <h3>Position</h3>
-                    <h3>Team</h3>
-                </div>
-            </div>  
+            <div class="col" id="player-info">
+
+            </div>
 
             <div class="col" id="myTeam">
 
+
+            </div>
+
                 
+                <!-- OLD BUTTONS -->
+                <!-- <form class="search" onsubmit="app.controllers.footballController.searchByPosition(event)" style="margin:auto;max-width:300px">
+                    <input type="text" id="search-button" placeholder="Search By Position" name="positions">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+
+
+                <form class="search" onsubmit="app.controllers.footballController.searchPlayersByName(event)" style="margin:auto;max-width:300px">
+                    <input type="text" id="search-button" placeholder="Search By Name" name="playerName">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form> -->
+
             </div>
         </div>
-    </section>  
+    </section>
 
 
 

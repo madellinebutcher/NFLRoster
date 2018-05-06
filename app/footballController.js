@@ -9,13 +9,18 @@ function FootballController() {
         for (let i = 0; i < players.length; i++) {
             var player = players[i];
             template += `
-            <div class="player-card">
-            <img class="playerImg" src="${player.photo}">
-            <h3>${player.fullname}</h3>
-            <h3>${player.position}</h3>
-            <h3>${player.pro_team}</h3>
+            <div class="card-group">
+                <div class="card bgmyteam">
+                    <img class="card-img-top" src="${player.photo}"
+                    <div class="card-body">
+                        <h3>${player.fullname}</h3>
+                        <h3>${player.position}</h3>
+                        <h3>${player.pro_team}</h3>
+                    </div>
+                </div>
+            <div>
+            <button class="mlbt btn btn-danger d-flex justify-content-center" onclick="app.controllers.footballController.removeFromTeam(${player.id})">Trade</button>
             </div>
-            <button onclick="app.controllers.footballController.removeFromTeam(${player.id})">Trade</button>
             `
             if (i > 49) {
                 i = players.length
@@ -41,13 +46,13 @@ function FootballController() {
                         <h3>${player.pro_team}</h3>
                     </div>
                 </div>
-            <div class="card-footer">
-            <button class="btn btn-outline-secondary" onclick="app.controllers.footballController.addToTeam(${player.id})">Add to team</button>
+            <div>
+            <button class="mlb btn btn-secondary" onclick="app.controllers.footballController.addToTeam(${player.id})">Add to team</button>
             </div>
             </div>
             
             `
-    
+
             if (i > 49) {
                 i = players.length
             }
@@ -61,13 +66,13 @@ function FootballController() {
 
 
     this.addToTeam = function addToTeam(id) {
-       footballService.addMyTeam(id, drawMyTeam);
-      };
+        footballService.addMyTeam(id, drawMyTeam);
+    };
 
 
     this.removeFromTeam = function removeFromTeam(id) {
         footballService.removeFromTeam(id, drawMyTeam)
-      };  
+    };
 
     //OLD SEARCH  
     // this.searchByTeam = function searchByTeam(e){
@@ -75,7 +80,7 @@ function FootballController() {
     //     var teamName = e.target.teamName.value;
     //     var filteredTeamNames = footballService.getPlayersByTeam(teamName);
     //     drawPlayers(filteredTeamNames)
-   
+
     // };
     // this.searchByPosition = function searchByPosition(e){
     //     e.preventDefault();
@@ -88,10 +93,10 @@ function FootballController() {
     //     var playerName = e.target.playerName.value;
     //     var filteredPlayerName = footballService.getPlayersByName(playerName);
     //     drawPlayers(filteredPlayerName)
-   
+
     // };
 
-    this.search = function search(e){
+    this.search = function search(e) {
         e.preventDefault();
         var query = e.target.query.value
         var results = footballService.search(query)

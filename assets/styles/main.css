@@ -67,6 +67,7 @@ input[type=text] {
 
 h1{
     text-align:center; 
+    margin-right:1vw;
 }
 .card-group{
     margin-left: 12vw;

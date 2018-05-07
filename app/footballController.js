@@ -21,6 +21,7 @@ function FootballController() {
             <div>
             <button class="mlbt btn btn-danger d-flex justify-content-center" onclick="app.controllers.footballController.removeFromTeam(${player.id})">Trade</button>
             </div>
+            </div>
             `
             if (i > 49) {
                 i = players.length

@@ -83,13 +83,17 @@ this.search = function search(query){
         var newPlayer = playersData.find(function (player) {
             return player.id == newPlayerId
         })
-        myTeam.push(newPlayer)
-        cb(myTeam);
-        if (myTeam.length <= 11) {
+        // myTeam.push(newPlayer)
+        // cb(myTeam);
+        if (newPlayer == newPlayer){
+            alert("Duplicate Player")
+        }
+        else if (myTeam.length <= 10) {
             myTeam.push(newPlayer)
             cb(myTeam);
           } else {
-            cb('Team is full.')
+            alert("Team is full.")
+        }
     };
 
     this.removeFromTeam = function removeFromTeam(removeId, draw) {

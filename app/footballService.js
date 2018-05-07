@@ -85,7 +85,7 @@ this.search = function search(query){
         })
         // myTeam.push(newPlayer)
         // cb(myTeam);
-        if (newPlayer == newPlayer){
+        if (newPlayer == newPlayerId){
             alert("Duplicate Player")
         }
         else if (myTeam.length <= 10) {

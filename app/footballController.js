@@ -10,7 +10,7 @@ function FootballController() {
             var player = players[i];
             template += `
             <div class="card-group">
-                <div class="card bgmyteam">
+                <div class="card">
                     <img class="card-img-top" src="${player.photo}"
                     <div class="card-body">
                         <h3>${player.fullname}</h3>
@@ -56,6 +56,7 @@ function FootballController() {
             if (i > 49) {
                 i = players.length
             }
+            
 
         }
         document.getElementById("player-info").innerHTML = template;

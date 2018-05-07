@@ -85,6 +85,11 @@ this.search = function search(query){
         })
         myTeam.push(newPlayer)
         cb(myTeam);
+        if (myTeam.length <= 11) {
+            myTeam.push(newPlayer)
+            cb(myTeam);
+          } else {
+            cb('Team is full.')
     };
 
     this.removeFromTeam = function removeFromTeam(removeId, draw) {

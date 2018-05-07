@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    font-family: 'Bungee', cursive;
     background-image: url(../footballbg.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -65,9 +65,6 @@ input[type=text] {
     
 }
 
-.bgmyteam{
-    background-color: rgba(218, 165, 32, 0.507)
-}
 h1{
     text-align:center; 
 }
@@ -75,9 +72,10 @@ h1{
     margin-left: 12vw;
 }
 .mlb{
-    margin-left:19vw;
+    margin-left:18vw;
 }
 .mlbt{
     margin-left:20vw;
 }
+
 

@@ -75,12 +75,16 @@ h1{
 }
 .card-group{
     margin-left: 12vw;
+    flex-flow: column;
 }
 .mlb{
     margin-left:18vw;
 }
 .mlbt{
-    margin-left:20vw;
+    margin-left:8vw;
+}
+.card-body{
+    padding:0;
 }
 
 

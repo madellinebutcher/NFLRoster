@@ -9,9 +9,9 @@ function FootballController() {
         for (let i = 0; i < players.length; i++) {
             var player = players[i];
             template += `
-            <div class="card-group">
+            <div class="myteam card-group">
                 <div class="card">
-                    <img class="card-img-top" src="${player.photo}"
+                    <img class="card-img-top" src="${player.photo}" alt="">
                     <div class="card-body">
                         <h3>${player.fullname}</h3>
                         <h3>${player.position}</h3>

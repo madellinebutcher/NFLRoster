@@ -4,7 +4,7 @@ function FootballService() {
     var playersData = [];
     var myTeam = [];
 
-  
+
     function loadPlayersData() {
         //check if the player already has a copy of the NFL playersData
         var localData = localStorage.getItem('playersData');
@@ -29,6 +29,8 @@ function FootballService() {
             console.log('Finished Writing Player Data to localStorage')
 
         });
+
+
 
     }
     loadPlayersData(); //call the function above every time we create a new service
@@ -69,35 +71,75 @@ function FootballService() {
 
     //     )
     // };
-this.search = function search(query){
-    var searches = query.toLowerCase()
-    var filteredSearches = playersData.filter(function (player){
-        return player.fullname.toLowerCase().includes(searches) || player.pro_team.toLowerCase().includes(searches) || player.position.toLowerCase().includes(searches)
-    })
-    return filteredSearches
+    this.search = function search(query) {
+        var searches = query.toLowerCase()
+        var filteredSearches = playersData.filter(function (player) {
+            return player.fullname.toLowerCase().includes(searches) || player.pro_team.toLowerCase().includes(searches) || player.position.toLowerCase().includes(searches)
+        })
+        return filteredSearches
 
-}
+    }
+
+    function samePerson(playerId) {
+        for (let i = 0; i < myTeam.length; i++) {
+            var checkDuplicate = myTeam[i];
+            if (playerId == checkDuplicate.id) {
+                return true
+            }
+
+        }
+    }
+
+    function samePosition(player) {
+        for (let i = 0; i < myTeam.length; i++) {
+            var checkPosition = myTeam[i];
+            if (player.position == checkPosition.position) {
+                return true
+            }
+
+        }
+    }
 
     this.addMyTeam = function addMyTeam(newPlayerId, cb) {
-       
         var newPlayer = playersData.find(function (player) {
-            return player.id == newPlayerId
-        })
+
+            if (player.id == newPlayerId) {
+                if (!samePerson(newPlayerId)) {
+                    if (!samePosition(player)) {
+                        if (myTeam.length <= 10) {
+                            myTeam.push(player)
+                            return cb(myTeam);
+                        }
+
+                        else {
+                            alert("Team is full.")
+                        }
+                        // myTeam.push(player)
+                    }
+                    else {
+                        alert("Same position.")
+                    }
+
+                }
+                else {
+                    alert("Already picked.")
+                }
+            }
+
+            // return cb(myTeam)
+
+        });
+
+
+
         // myTeam.push(newPlayer)
         // cb(myTeam);
-        // if (newPlayerId >2){
-        //     alert("Duplicate Player")
-        // }
-        if (myTeam.length <= 10) {
-            myTeam.push(newPlayer)
-            cb(myTeam);
-          } else {
-            alert("Team is full.")
-        }
+
+
     };
 
     this.removeFromTeam = function removeFromTeam(removeId, draw) {
-        
+
         var removeMember = playersData.find(function (player) {
             return player.id == removeId
         })

@@ -117,7 +117,7 @@ function FootballService() {
                         // myTeam.push(player)
                     }
                     else {
-                        alert("Same position.")
+                        alert("You already have a player in this position.")
                     }
 
                 }

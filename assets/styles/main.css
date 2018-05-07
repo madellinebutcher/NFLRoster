@@ -42,6 +42,10 @@ form.search::after {
     display: table;
 }
 
+.titlecolor{
+    color:rgb(148, 18, 18);
+}
+
 /* .playerImage{
     width:200vw;
     height:200vh;
